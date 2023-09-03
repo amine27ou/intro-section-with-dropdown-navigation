@@ -21,5 +21,7 @@ let navlinks = document.querySelector(".navbar .navlinks ul");
 hamburger.addEventListener("click",()=>{
     hamburger.classList.toggle("active");
     navlinks.classList.toggle("active");
-    console.log("working")
+    document.querySelector(".blur").classList.toggle("active");
+
+    
 })

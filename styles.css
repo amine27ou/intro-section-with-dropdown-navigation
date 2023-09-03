@@ -1,211 +1,233 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Epilogue', sans-serif;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Epilogue", sans-serif;
+  box-sizing: border-box;
 }
-.header{
-    background: white;
+.header {
+  background: white;
 }
 
-.navbar{
-    display: flex;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  position: relative;
+}
+
+.navbar .navlinks ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+.navbar .navlinks ul li a,
+.login {
+  color: hsl(0, 0%, 41%);
+  transition: all 0.4s;
+}
+.navbar .buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.navbar .buttons .register-btn {
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: transparent;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.navbar .buttons .register-btn:hover {
+  background-color: black;
+  color: white;
+}
+.navbar .login:hover {
+  color: black;
+}
+.navbar .navlinks ul li a:hover {
+  color: black;
+}
+.sub-links {
+  box-shadow: 0 0 60px rgb(211, 211, 211);
+  padding: 6px;
+  border-radius: 7px;
+  position: absolute;
+  top: 80%;
+  display: none;
+  background: white;
+}
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sub-links p {
+  margin: 10px;
+  color: hsl(0, 0%, 41%);
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.sub-links p:hover {
+  color: black;
+}
+.sub-links.active {
+  display: block;
+}
+.content .learn-more-btn {
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: transparent;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.content {
+  padding: 40px 100px;
+}
+.content .learn-more-btn:hover {
+  background-color: black;
+  color: white;
+}
+.content .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.right-col img {
+  width: 350px;
+}
+.left-col {
+  width: 400px;
+}
+.left-col h1 {
+  font-size: 60px;
+}
+.left-col p {
+  margin: 40px 0;
+}
+.brands {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+.hamburger .bar {
+  height: 2px;
+  background: black;
+  width: 20px;
+  margin: 3px 0;
+  display: block;
+}
+@media (max-width: 728px) {
+  .content .row {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 15px 40px;
-    position: relative;
-}
-
-
-
-.navbar  .navlinks ul {
+  }
+  .content {
+    text-align: center;
+  }
+  .content h1 {
+    font-size: 20px;
+  }
+  .navbar .navlinks ul {
+    transition: all 0.3s;
+    right: -100%;
+    left: 100%;
     display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: white;
     align-items: center;
     justify-content: center;
-    gap: 60px;
-}
-.navbar  .navlinks ul li a,.login{
-    color: hsl(0, 0%, 41%);
-    transition: all .4s;
+    text-align: center;
+    flex-direction: column;
+    z-index: 10000;
 
-}
-.navbar  .buttons{
+    overflow: hidden;
+  }
+  .hamburger {
+    display: block;
+    position: fixed;
+    right: 10px;
+    top: 14px;
+    z-index: 10000;
+  }
+  .hamburger .bar {
+    transition: all 0.4s;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .brands img {
+    width: 40px;
+  }
+  .right-col img {
+    width: 250px;
+  }
+  .left-col {
+    width: 250px;
+  }
+  .navbar .navlinks ul.active {
     display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+    background: white;
     align-items: center;
-    gap: 30px;
-}
-.navbar  .buttons .register-btn{
-    border: 1px solid black;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: transparent;
-    transition: all .4s;
-    cursor: pointer;
-}
-.navbar  .buttons .register-btn:hover{
-    background-color: black;
-    color: white;
-}
-.navbar  .login:hover{
-    color: black;
-}
-.navbar  .navlinks ul li a:hover{
-    color: black;
-}
-.sub-links{
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    z-index: 10000;
+  }
+  .link {
+    flex-direction: column;
+  }
+  .sub-links {
+    position: inherit;
     box-shadow: 0 0 60px rgb(211, 211, 211);
     padding: 6px;
     border-radius: 7px;
-    position: absolute;
-    top: 80%;
-    display: none;
     background: white;
-}
-.link{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.sub-links p{
-    margin: 10px;
-    color: hsl(0, 0%, 41%);
-    transition: all .4s;
-    cursor: pointer;
-}
-.sub-links p:hover{
-    color: black;
-}
-.sub-links.active{
-    display: block;
-}
-.content .learn-more-btn{
-    border: 1px solid black;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: transparent;
-    transition: all .4s;
-    cursor: pointer;
-}
-.content{
-    padding: 40px 100px;
-}
-.content .learn-more-btn:hover{
-    background-color: black;
-    color: white;
-}
-.content .row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.right-col img{
-    width: 350px;
-}
-.left-col{
-    width: 400px;
-}
-.left-col h1{
-    font-size: 60px;
-}
-.left-col p{
-    margin: 40px 0;
-}
-.brands{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin: 30px 0;
-}
-.hamburger{
-    cursor: pointer;
     display: none;
-}
-.hamburger .bar{
-    height: 2px;
-    background:black;
-    width: 20px;
-    margin: 3px 0;
+    box-shadow: none;
+  }
+  .buttons {
+    flex-direction: column;
+  }
+  .blur {
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    transition: all 0.3s;
+  }
+  .blur.active {
     display: block;
-}
-@media(max-width:728px){
-    .content .row{
-        flex-direction: column;
-        align-items: center;
-    }
-    .content{
-        text-align: center;
-    }
-    .content h1{
-        font-size: 20px;
-    }
-    .navbar  .navlinks ul{
-        display: none;
-    }
-    .hamburger{
-        display: block;
-        position: fixed;
-        right: 10px;
-        top: 14px;
-
-    }
-    .hamburger .bar{
-        transition: all .4s;
-    }
-    .hamburger.active .bar:nth-child(1){
-        transform: rotate(45deg) translateY(7px);
-    }
-    .hamburger.active .bar:nth-child(3){
-        transform: rotate(-45deg) translateY(-7px);
-    }
-    .hamburger.active .bar:nth-child(2){
-        opacity: 0;
-    }
-    .brands img{
-        width: 40px;
-    }
-    .right-col img{
-        width: 250px;
-    }
-    .left-col{
-        width: 250px;
-    }
-    .navbar  .navlinks ul.active{
-        display: flex;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 50%;
-        background: white;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-    }
-    .link{
-        flex-direction: column;
-    }
-    .sub-links{
-        position: inherit;
-        box-shadow: 0 0 60px rgb(211, 211, 211);
-        padding: 6px;
-        border-radius: 7px;
-        background: white;
-        display: none;
-        box-shadow: none;
-    }
-    .buttons{
-        flex-direction: column;
-    }
-    
-    .blur{
-        background: rgba(0 , 0, 0, 0.5);
-    }
-    .right-col{
-        order: -1;
-    }
-    
+  }
+  .right-col {
+    order: -1;
+  }
 }
